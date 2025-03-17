@@ -1,0 +1,37 @@
+#!/usr/bin/expect
+
+# Chemin vers le script wireguard-install.sh
+set script_path "/root/wireguard/wireguard-install.sh"
+
+# Lancer le script wireguard-install.sh
+spawn bash -c $script_path
+
+# Attendre la premi�re question et fournir la r�ponse 1
+expect "Option:"
+send "1\r"
+
+# Attendre la demande de nom et laisser l'utilisateur entrer le nom
+expect "Name:"
+send_user "Veuillez entrer un nom pour l'utilisateur WireGuard : "
+expect_user -re "(.*)\n"
+set user_name $expect_out(1,string)
+send "$user_name\r"
+
+# Attendre la confirmation du nom ou une erreur
+expect {
+    "invalid name" {
+        send_user "Nom invalide. Veuillez r�essayer.\n"
+        expect "Name:"
+        send_user "Veuillez entrer un nom pour l'utilisateur WireGuard : "
+        expect_user -re "(.*)\n"
+        set user_name $expect_out(1,string)
+        send "$user_name\r"
+    }
+    "DNS server" {
+        # S�lectionner l'option DNS 3
+        send "3\r"
+    }
+}
+
+# Attendre que le processus se termine
+expect eof
