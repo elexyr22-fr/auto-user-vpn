@@ -6,7 +6,7 @@
 
 # Créé user Wireguard basique:
 
-1) Allez Node MariaDB,
+1) Allez Node Mar,
 
 2) ```
    cd /root/wireguard
