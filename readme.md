@@ -1,19 +1,19 @@
-# Via mon script:
+# Comment installer WireGuard VPN
 
 1) ```
-   ./vpn.expect
+   wget -O wireguard.sh https://get.vpnsetup.net/wg
    ```
 
-# Créé user Wireguard basique:
-
-1) Allez Node Mar,
-
 2) ```
-   cd /root/wireguard
+   sudo bash wireguard.sh --auto
    ```
 
 3) ```
-   ./wireguard-install.sh
+   sudo bash wireguard.sh
    ```
 
-4) Suivre la config simple.
+4) Suivre la config simple:
+
+Réponse dans l'ordre: 1, 3, n.
+
+C'est fini !
