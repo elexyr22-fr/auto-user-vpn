@@ -14,6 +14,4 @@
 
 4) Suivre la config simple:
 
-Réponse dans l'ordre: 1, 3, n.
-
-C'est fini !
+Réponse dans l'ordre: **1, 3, n**
