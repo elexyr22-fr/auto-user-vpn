@@ -15,3 +15,11 @@
 4) Suivre la config simple:
 
 Réponse dans l'ordre: **1, 3, n**
+
+------------------------------------------------------
+
+5) Et pour créé un new user :
+
+```
+sudo bash wireguard.sh
+```
